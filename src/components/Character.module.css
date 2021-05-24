@@ -1,0 +1,49 @@
+.characterPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #242629;
+  padding: 50px;
+  margin-top: 50px;
+  border-left: tomato solid 4px;
+  font-weight: 300;
+}
+.category {
+  font-size: 1.2rem;
+}
+.characterHead {
+  display: flex;
+  align-items: center;
+}
+
+/* .characterHead:before{
+  content: '';
+  width: 20px;
+  background: tomato;
+  display: flex;
+  height:20px;
+  margin-right: 5px;
+
+} */
+
+.characterHead > div {
+  padding-left: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.characterMainInfo {
+  padding: 10px 0;
+}
+.characterSubInfo {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 300px;
+  padding: 10px;
+}

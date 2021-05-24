@@ -1,0 +1,36 @@
+body {
+  line-height: 1.625rem;
+  font-family: "Open Sans", sans-serif;
+  background: #16161A;
+  max-width: 840px;
+  margin: 0 auto;
+  color: #fffffe;
+  font-weight: 600;
+}
+
+.portalOrganic {
+  display: block;
+  width: 50px;
+  height: 70px;
+  background-color: #d0ec5d;
+  border-radius: 48% 57% 46% 49% / 30% 46% 49% 41%;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");

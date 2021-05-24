@@ -1,0 +1,20 @@
+.inputSearch {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.inputSearch label {
+  margin-right: 20px;
+  font-size: 2rem;
+}
+
+.inputSearch input {
+  border: none;
+  border-bottom: solid 3px #fffffe;
+  padding: 20px;
+  outline: none;
+  background: transparent;
+  font-size: 1.8rem;
+  color: #fffffe;
+}
