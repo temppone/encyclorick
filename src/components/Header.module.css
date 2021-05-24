@@ -1,19 +1,19 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 5px;
 }
+
 .logoHeader {
   width: 70px;
 }
+
 .navLink{
   color: #ffffff;
-  padding: 5px;
+  padding: 10px;
 }
+
 .navLink:hover{
-  border-left: #D0EC5D 3px solid;
+  border-left: #7ED957 3px solid;
 }
-/* input {
-  outline-color: #F0E14A;
-  height: px;
-} */
+

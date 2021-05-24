@@ -11,6 +11,8 @@ const Input = ({ label, id, value, setValue, placeholder }) => {
         value={value}
         onChange={({ target }) => setValue(target.value)}
         placeholder={placeholder}
+        onFocus={(e) => (e.target.placeholder = "")}
+        onBlur={(e) => e.target.placeholder = placeholder} 
       />
     </div>
   );

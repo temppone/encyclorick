@@ -31,7 +31,13 @@ const Character = ({ searchInput }) => {
     }
   }, [searchInput]);
 
-  if (loading) return <div>Carregando</div>;
+  const stylesStatus = {
+    alive: styles.charStatusAlive,
+    dead: styles.charStatusDead,
+    unknown: styles.charStatusUnknown,
+  };
+
+  if (loading) return <div className={styles.organicLoading}></div>;
   if (error) return <p>{error}</p>;
   if (character === null) return null;
 
@@ -39,31 +45,46 @@ const Character = ({ searchInput }) => {
     <div>
       {character ? (
         character.map((char) => (
-          <section key={char.id} className={styles.characterPage}>
-            <div>
+          <section
+            key={char.id}
+            className={`${styles.characterPage} + animeShow`}
+          >
+            <div className={styles.imageCharacter}>
               <img src={char.image} alt="" />
             </div>
             <div>
               <div className={styles.characterHead}>
                 <h1>{char.name}</h1>
-                <div>{char.status}</div>
+                <div
+                  className={
+                    char.status === "Alive"
+                      ? stylesStatus["alive"]
+                      : stylesStatus["dead"]
+                  }
+                >
+                  {char.status}
+                </div>
               </div>
               <div className={styles.characterInfos}>
                 <ul>
                   <li>
-                    <b className={styles.category}>Species:</b> {char.species}
+                    <div className={styles.category}>Species</div>
+                    {char.species}
                   </li>
                   <li>
-                    <b className={styles.category}>Gender:</b> {char.gender}
+                    <div className={styles.category}>Gender</div> {char.gender}
                   </li>
                   <li>
-                    <b className={styles.category}>Origin:</b> {char.origin.name}
+                    <div className={styles.category}>Origin</div>
+                    {char.origin.name}
                   </li>
                   <li>
-                    <b className={styles.category}>Last location:</b> {char.location.name}
+                    <div className={styles.category}>Last location</div>
+                    {char.location.name}
                   </li>
                   <li>
-                    <b className={styles.category}>Episodes:</b> {char.episode.length}
+                    <div className={styles.category}>Episodes</div>
+                    {char.episode.length}
                   </li>
                 </ul>
               </div>

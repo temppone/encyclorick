@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  height: 100px;
 }
 
 .inputSearch label {
@@ -17,4 +18,18 @@
   background: transparent;
   font-size: 1.8rem;
   color: #fffffe;
+}
+
+.inputSearch input:focus + {
+  border-bottom: solid 4px #fffffe;
+}
+
+.inputSearch input::placeholder:focus {
+  color: #fffffe;
+}
+
+.inputSearch button{
+  background: transparent;
+  border: none;
+  color: #ffffff;
 }
