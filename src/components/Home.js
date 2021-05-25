@@ -18,16 +18,19 @@ const Home = () => {
           e.preventDefault();
         }}
       >
-        <Input
-          id="search"
-          label=""
-          value={search}
-          setValue={setSearch}
-          placeholder={"Search"}
-        />
-        <button>
-          <Search fontSize="large" />
-        </button>
+        <div>
+          <Input
+            id="search"
+            label=""
+            value={search}
+            setValue={setSearch}
+            placeholder={"Search"}
+          />
+
+          <button>
+            <Search fontSize="large" />
+          </button>
+        </div>
       </form>
       {<Character searchInput={search} />}
     </div>

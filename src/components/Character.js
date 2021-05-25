@@ -31,15 +31,25 @@ const Character = ({ searchInput }) => {
     }
   }, [searchInput]);
 
-  const stylesStatus = {
-    alive: styles.charStatusAlive,
-    dead: styles.charStatusDead,
-    unknown: styles.charStatusUnknown,
+  const stylesStatusTest = (status) => {
+    const stylesStatus = {
+      alive: styles.charStatusAlive,
+      dead: styles.charStatusDead,
+      unknown: styles.charStatusUnknown,
+    };
+
+    if (status === "Alive") {
+      return stylesStatus["alive"];
+    } else if (status === "Dead") {
+      return stylesStatus["dead"];
+    } else {
+      return stylesStatus["unknown"];
+    }
   };
 
   if (loading) return <div className={styles.organicLoading}></div>;
   if (error) return <p>{error}</p>;
-  if (character === null) return null;
+  if (character === null) return (searchInput = "Bird");
 
   return (
     <div>
@@ -49,44 +59,41 @@ const Character = ({ searchInput }) => {
             key={char.id}
             className={`${styles.characterPage} + animeShow`}
           >
-            <div className={styles.imageCharacter}>
-              <img src={char.image} alt="" />
-            </div>
             <div>
-              <div className={styles.characterHead}>
-                <h1>{char.name}</h1>
-                <div
-                  className={
-                    char.status === "Alive"
-                      ? stylesStatus["alive"]
-                      : stylesStatus["dead"]
-                  }
-                >
-                  {char.status}
-                </div>
+              <div className={styles.characterImage}>
+                <img src={char.image} alt="" />
               </div>
-              <div className={styles.characterInfos}>
-                <ul>
-                  <li>
-                    <div className={styles.category}>Species</div>
-                    {char.species}
-                  </li>
-                  <li>
-                    <div className={styles.category}>Gender</div> {char.gender}
-                  </li>
-                  <li>
-                    <div className={styles.category}>Origin</div>
-                    {char.origin.name}
-                  </li>
-                  <li>
-                    <div className={styles.category}>Last location</div>
-                    {char.location.name}
-                  </li>
-                  <li>
-                    <div className={styles.category}>Episodes</div>
-                    {char.episode.length}
-                  </li>
-                </ul>
+              <div>
+                <div className={styles.characterHead}>
+                  <h1>{char.name}</h1>
+                  <div className={stylesStatusTest(char.status)}>
+                    {char.status}
+                  </div>
+                </div>
+                <div className={styles.characterInfos}>
+                  <ul>
+                    <li>
+                      <div className={styles.category}>Species</div>
+                      {char.species}
+                    </li>
+                    <li>
+                      <div className={styles.category}>Gender</div>{" "}
+                      {char.gender}
+                    </li>
+                    <li>
+                      <div className={styles.category}>Origin</div>
+                      {char.origin.name}
+                    </li>
+                    <li>
+                      <div className={styles.category}>Last location</div>
+                      {char.location.name}
+                    </li>
+                    <li>
+                      <div className={styles.category}>Episodes</div>
+                      {char.episode.length}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>

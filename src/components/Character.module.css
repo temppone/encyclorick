@@ -5,21 +5,31 @@ h1 {
 }
 
 img {
-  width: 350px;
-  padding: 10px;
+  width: 250px;
 }
 
 .characterPage {
-  display: flex;
+  align-items: center;
   background: #242629;
-  padding: 50px;
-  margin-top: 50px;
   font-weight: 300;
   border-top: 3px solid #2cb67d;
+  padding: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-.imageCharacter {
-  margin-right: 30px;
+.characterPage > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.characterPage > div > div {
+  width: 280px;
+}
+
+.characterImage {
+  margin-right: 50px;
 }
 
 .category {
@@ -51,13 +61,13 @@ img {
   padding-left: 7px;
 }
 .charStatusUnknown {
-  border-left: solid 4px #f8c32d;
+  border-left: solid 4px #ffed4c;
   padding-left: 7px;
 }
 
 .organicLoading {
   width: 70px;
-  height: 50px;
+  height: 20px;
   background: linear-gradient(135deg, #547e28, #6f9631);
   border-radius: 41% 59% 41% 59% / 43% 45% 55% 57%;
   animation: organicLoading 3s infinite;
@@ -76,5 +86,21 @@ img {
   }
   100% {
     border-radius: 41% 59% 41% 59% / 43% 45% 55% 57%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+  .characterPage { 
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+  }
+  .characterPage > div {
+    flex-direction: column;
+  }
+  .characterImage {
+    margin: 0 auto;
   }
 }

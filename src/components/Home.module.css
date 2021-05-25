@@ -5,11 +5,6 @@
   height: 100px;
 }
 
-.inputSearch label {
-  margin-right: 20px;
-  font-size: 2rem;
-}
-
 .inputSearch input {
   border: none;
   border-bottom: solid 3px #fffffe;
@@ -20,6 +15,17 @@
   color: #fffffe;
 }
 
+.inputSearch > div {
+  position: relative;
+}
+
+.inputSearch > div > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(50%);
+}
+
 .inputSearch input:focus + {
   border-bottom: solid 4px #fffffe;
 }
@@ -28,8 +34,18 @@
   color: #fffffe;
 }
 
-.inputSearch button{
+.inputSearch button {
   background: transparent;
   border: none;
   color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+.inputSearch{
+  margin: 0 auto;
+}
+  .inputSearch input{
+    width: 250px;
+
+  }
 }
